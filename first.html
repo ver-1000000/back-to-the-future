@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja_JP">
+  <head>
+    <meta charset="UTF-8">
+    <title>FIRST | Back To The Future</title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a href="./">index</a>
+      </li>
+      <li>
+        <a href="./first.html">first</a>
+      </li>
+      <li>
+        <a href="./second.html">second</a>
+      </li>
+    </ul>
+  </body>
+  <script>
+    history.pushState(null, null, location.href);
+    window.addEventListener('popstate', (e) => {
+      history.go(1);
+      alert('テメー…… 今「バック」…… したな……？')
+    });
+  </script>
+</html>
