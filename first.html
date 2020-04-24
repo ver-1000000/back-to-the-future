@@ -22,7 +22,8 @@
   </body>
   <script class="s">
     document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => document.querySelector('input').focus(), 2000);
+      window.addEventListener('click', console.log);
+      setTimeout(() => document.querySelector('input').click(), 2000);
       history.pushState(null, null, location.href);
       window.addEventListener('popstate', (e) => {
         history.forward();
