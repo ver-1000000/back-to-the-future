@@ -7,7 +7,7 @@
   <body>
     <ul>
       <li>
-        <a href="./">index</a>
+        <a href="./index.html">index</a>
       </li>
       <li>
         <a href="./first.html">first</a>
@@ -18,10 +18,13 @@
     </ul>
   </body>
   <script>
-    history.pushState(null, null, location.href);
-    window.addEventListener('popstate', (e) => {
-      history.go(1);
-      alert('テメー…… 今「バック」…… したな……？')
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOMContentLoaded!');
+      history.pushState(null, null, location.href);
+      window.addEventListener('popstate', (e) => {
+        history.forward();
+        alert('テメー…… 今「バック」…… したな……？')
+      });
     });
   </script>
 </html>
