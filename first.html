@@ -16,11 +16,13 @@
         <a href="./second.html">second</a>
       </li>
     </ul>
+    <input type="text">
     <input type="text" autofocus>
     <pre></pre>
   </body>
   <script class="s">
     document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => document.querySelector('input').focus(), 2000);
       history.pushState(null, null, location.href);
       window.addEventListener('popstate', (e) => {
         history.forward();
