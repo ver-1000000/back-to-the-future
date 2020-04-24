@@ -5,31 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FIRST | Back To The Future</title>
   </head>
-  <body onload="document.querySelector('pre').innerText = document.querySelector('.s').text">
+  <body onload="document.querySelector('pre').textContent = document.querySelector('.script').text">
     <ul>
-      <li>
-        <a href="./index.html">index</a>
-      </li>
-      <li>
-        <a href="./first.html">first</a>
-      </li>
-      <li>
-        <a href="./second.html">second</a>
-      </li>
+      <li><a href="./index.html">index</a></li>
+      <li><a>first</a></li>
+      <li><a href="./second.html">second</a></li>
     </ul>
+    <hr>
     <pre></pre>
   </body>
-  <script class="s">
+  <script class="script">
     document.addEventListener('DOMContentLoaded', () => {
-      let historyCount = 0;
+      let count = 0;
       history.pushState(null, null, document.href);
       history.back();
       onpopstate = (e) => {
         history.forward();
-        ++historyCount;
-        if (historyCount > 2 && historyCount % 2) {
-          alert('戻らせないよ');
-        }
+        ++count;
+        if (count > 2 && count % 2) { alert('戻らせないよ'); }
       };
     });
   </script>
