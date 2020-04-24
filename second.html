@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>SECOND | Back To The Future</title>
   </head>
-  <body>
+  <body onload="document.querySelector('pre').innerText = document.querySelector('.s').text">
     <ul>
       <li>
         <a href="./index.html">index</a>
@@ -16,15 +16,12 @@
         <a href="./second.html">second</a>
       </li>
     </ul>
+    <input type="text" autofocus>
+    <pre></pre>
   </body>
-  <script>
+  <script class="s">
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOMContentLoaded!');
-      window.history.pushState(null, null, null);
-      window.addEventListener('popstate', () => {
-        window.history.pushState(null, null, null);
-        alert('テメー…… 今secondから「バック」…… したな……？')
-      });
+      window.addEventListener('beforeunload', (e) => e.returnValue = false, false);
     });
   </script>
 </html>
