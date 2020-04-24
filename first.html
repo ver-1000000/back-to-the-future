@@ -2,6 +2,7 @@
 <html lang="ja_JP">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FIRST | Back To The Future</title>
   </head>
   <body onload="document.querySelector('pre').innerText = document.querySelector('.s').text">
@@ -16,19 +17,20 @@
         <a href="./second.html">second</a>
       </li>
     </ul>
-    <input type="text">
-    <input type="text" autofocus>
     <pre></pre>
   </body>
   <script class="s">
     document.addEventListener('DOMContentLoaded', () => {
-      window.addEventListener('click', console.log);
-      setTimeout(() => document.querySelector('input').click(), 2000);
-      history.pushState(null, null, location.href);
-      window.addEventListener('popstate', (e) => {
+      let historyCount = 0;
+      history.pushState(null, null, document.href);
+      history.back();
+      onpopstate = (e) => {
         history.forward();
-        alert('テメー…… 今firstから「バック」…… したな……？')
-      });
+        ++historyCount;
+        if (historyCount > 2 && historyCount % 2) {
+          alert('戻らせないよ');
+        }
+      };
     });
   </script>
 </html>

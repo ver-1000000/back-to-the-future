@@ -2,9 +2,10 @@
 <html lang="ja_JP">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>INDEX | Back To The Future</title>
   </head>
-  <body>
+  <body onload="document.querySelector('pre').innerText = document.querySelector('.s').text">
     <ul>
       <li>
         <a href="./index.html">index</a>
@@ -16,5 +17,10 @@
         <a href="./second.html">second</a>
       </li>
     </ul>
+    <pre></pre>
   </body>
+  <script class="s">
+    document.addEventListener('DOMContentLoaded', () => {
+    });
+  </script>
 </html>

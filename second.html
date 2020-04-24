@@ -2,6 +2,7 @@
 <html lang="ja_JP">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SECOND | Back To The Future</title>
   </head>
   <body onload="document.querySelector('pre').innerText = document.querySelector('.s').text">
@@ -16,15 +17,10 @@
         <a href="./second.html">second</a>
       </li>
     </ul>
-    <input type="text">
-    <input type="text" autofocus>
     <pre></pre>
   </body>
   <script class="s">
     document.addEventListener('DOMContentLoaded', () => {
-      window.addEventListener('click', console.log);
-      setTimeout(() => document.querySelector('input').click(), 2000);
-      window.addEventListener('beforeunload', (e) => e.returnValue = false, false);
     });
   </script>
 </html>
