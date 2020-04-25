@@ -17,7 +17,7 @@
   <script class="script">
     document.addEventListener('DOMContentLoaded', () => {
       let count = 0;
-      history.pushState(null, null, document.href);
+      history.pushState(null, null, location.href);
       history.back();
       onpopstate = (e) => {
         history.forward();
